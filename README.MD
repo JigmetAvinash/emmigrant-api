@@ -14,12 +14,38 @@ This is a simple Flask-based API for getting emigrants data which is getting its
 - The endpoints are given below.
 
 ## Endpoints
-- GET `/api/v1/filter?column=<column_name>&value=<value>`
-- GET `/api/v1/unique_values?column=<column_name>`
-- GET `/api/v1/total_records`
-- POST `/api/v1/add_comment`
-- GET `/api/v1/comments`
-- GET `/api/v1/comments?username=<username>`
+### GET `/api/v1/filter?column=<column_name>&value=<value>`
+- Description: Filters the dataset based on the specified column and value.
+- Example: `/api/v1/filter?column=Entity&value=Afghanistan`
+
+### GET `/api/v1/unique_values?column=<column_name>`
+- Description: Retrieves unique values from the specified column.
+- Example: `/api/v1/unique_values?column=Entity`
+
+### GET `/api/v1/total_records`
+- Description: Returns the total number of records in the dataset.
+- Example: `/api/v1/total_records`
+
+### POST `/api/v1/add_comment`
+- Description: Adds a new comment to the comments dataset.
+- Example:
+  ```json
+  {
+    "User": "JaneDoe",
+    "Username": "janedoe1",
+    "Comment": "This is a new comment",
+    "Date": "2023-10-11",
+    "ExtraInfo": "Some extra info"
+  }
+  ```
+
+### GET `/api/v1/comments`
+- Description: Retrieves all comments from the comments dataset.
+- Example: `/api/v1/comments`
+
+### GET `/api/v1/comments?username=<username>`
+- Description: Retrieves comments from the comments dataset for the specified username.
+- Example: `/api/v1/comments?username=janedoe1`
 
 ## Dataset Columns
 The dataset contains the following columns:
